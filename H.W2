@@ -1,0 +1,151 @@
+الاسم : لانا زياد ابو غالي
+الرقم الجامعي : 202410639
+الشعبة : 3
+المادة : البرمجة التطبيقية 
+واجب رقم 2
+اكتب برنامج يطبع :
+
+1-	*****
+public class PrintStars {
+    public static void main(String[] args) {
+        System.out.println("*****");
+    }
+}
+2-	*
+    *     
+    *     
+    *     
+    *     
+public class PrintStars {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            System.out.println("*");
+        }
+    }
+}
+
+
+3-	******
+    ******     
+    ******   
+    ******   
+    ******   
+public class PrintFiveStars {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            System.out.println("*****");
+        }
+    }
+}
+
+4-	*
+    **     
+    ***     
+    ****     
+    *****     
+public class LeftTriangleStars {
+    public static void main(String[] args) {
+        int rows = 5; 
+        
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println(); 
+        }
+    }
+}
+5-	*
+      *               
+        *                    
+          *                         
+            *                              
+public class DiagonalStars {
+    public static void main(String[] args) {
+        int rows = 5; 
+        
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" "); 
+            }
+            System.out.println("*");
+        }
+    }
+}
+6-	*   
+   **       
+  ***      
+ ****     
+*****    
+public class RightTriangleStars {
+    public static void main(String[] args) {
+        int rows = 5; 
+        
+        for (int i = 1; i <= rows; i++) {
+                      for (int j = i; j < rows; j++) {
+                System.out.print(" ");
+            }
+        
+            for (int k = 1; k <= i; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+7-	    *
+       ***
+      *****
+     *******
+    *********  
+public class CenterTriangleStars {
+    public static void main(String[] args) {
+        int rows = 5; // عدد الأسطر في المثلث
+        
+        for (int i = 1; i <= rows; i++) {
+            for (int j = i; j < rows; j++) {
+                System.out.print(" ");
+            }
+            (عددها = 2*i - 1)
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+            System.out.println(); 
+        }
+    }
+}
+8-	    *
+       ***
+      *****
+     *******
+    *********
+     *******
+      *****
+       ***
+        *
+public class DiamondStars {
+    public static void main(String[] args) {
+        int rows = 5; // نصف عدد الأسطر (قمة المثلث)
+        
+        // الجزء العلوي من المثلث
+        for (int i = 1; i <= rows; i++) {
+            for (int j = i; j < rows; j++) {
+                System.out.print(" "); // المسافات قبل النجوم
+            }
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*"); 
+            }
+            System.out.println(); 
+        }
+        
+        for (int i = rows - 1; i >= 1; i--) {
+            for (int j = rows; j > i; j--) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*"); 
+            }
+            System.out.println();
+        }
+    }
+}
