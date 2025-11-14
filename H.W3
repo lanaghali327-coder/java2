@@ -1,0 +1,74 @@
+الاسم : لانا زياد ابو غالي
+الرقم الجامعي : 202410639
+الشعبة : 3
+المادة : البرمجة التطبيقية 
+واجب رقم 3
+ اكتب برنامج يقراء من اليوزر نمبرز واخزنها في الاري .
+بدي الف على الاري واشوف الاعداد الزوجية واخزنها في اري ثانية .
+بدي اعمل اري ثالثة واخزن فيها الاعداد الفردية .
+بدي اعمل اري رابعة واخزن فيها الاعداد الاولية .
+بدي اطبع الاربع ايرز .
+import java.util.Scanner;
+
+public class NumbersArrays {
+public static void main(String[] args) {
+Scanner input = new Scanner(System.in);
+
+// Read the size of the array from the user
+System.out.print("Enter how many numbers you want to enter: ");
+int n = input.nextInt();
+
+int[] numbers = new int[n];
+System.out.println("Enter " + n + " numbers:");
+for (int i = 0; i < n; i++) {
+numbers[i] = input.nextInt();
+}
+
+// Create arrays for even, odd, and prime numbers
+int[] evens = new int[n];
+int[] odds = new int[n];
+int[] primes = new int[n];
+
+int evenCount = 0, oddCount = 0, primeCount = 0;
+
+// Loop through the numbers and store them in the appropriate arrays
+for (int num : numbers) {
+if (num % 2 == 0) {
+evens[evenCount++] = num;
+} else {
+odds[oddCount++] = num;
+}
+
+if (isPrime(num)) {
+primes[primeCount++] = num;
+}
+}
+
+// Print the results
+System.out.print("Even numbers: ");
+printArray(evens, evenCount);
+
+System.out.print("Odd numbers: ");
+printArray(odds, oddCount);
+
+System.out.print("Prime numbers: ");
+printArray(primes, primeCount);
+}
+// Function to check if a number is prime
+    public static boolean isPrime(int num) {
+        if (num <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    // Function to print an array
+    public static void printArray(int[] arr, int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+}
