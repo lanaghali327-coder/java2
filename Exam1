@@ -1,0 +1,72 @@
+import static java.lang.Math.floor;
+
+public class Elevator {
+    private char speed;
+    private int floors;
+    
+    
+    public Elevator(){
+        setSpeed('F');
+        setFloors(4);
+         
+    }
+     public Elevator(char speed,int floors){
+         this.speed = speed;
+         this.floors =floors;
+         
+     }
+    
+    public char getSpeed(){
+        return speed;
+    }
+   public void  setSpeed(char speed){
+    if(speed=='F'||speed=='S'){
+     this.speed = speed;  
+   }else{
+        System.out.print("Error");
+    }
+   }
+   public int getFloors() {
+    return floors;
+}
+
+   public void setFloors(int floors){
+     if(floors>=1 && floors <=20)   {
+        this.floors = floors; 
+     }else{
+         System.out.print("Error");
+     }
+
+   }
+   @Override
+   public String toString(){
+       return "Elevator{ speed=" + speed + ", floors=" + floors + " }";
+   }
+   public double getSpeedCost(){
+     int cost=0;
+     switch(speed){
+       case 'S': cost=1500;break;
+       case 'F': cost=3000;break;
+   }
+     return cost;  
+   }
+   public double getFloorCost(){
+      double floorsCost=0;
+      if(this.floors>=1 && this.floors<=5){
+          floorsCost=this.floors*2000;
+      
+   }else if(this.floors>=6 && this.floors<=10){
+       floorsCost=this.floors*1500;
+   }else if(this.floors>=11 && this.floors<=20){
+      floorsCost=this.floors*1000;
+   }
+       
+       return floorsCost;
+   }
+   public double getTotalCost(){
+       double totalCost=getSpeedCost()+getFloorCost()+100;
+        return totalCost;
+   }
+   
+   }
+   
